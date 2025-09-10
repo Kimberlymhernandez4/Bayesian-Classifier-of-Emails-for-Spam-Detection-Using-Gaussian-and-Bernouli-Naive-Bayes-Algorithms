@@ -101,7 +101,22 @@ This analysis has demonstrated that Bayesian classification is an effective Mach
 
 -------------------------------------------------------------------------------------------------------------
 
+# Limitations & Improvement Areas
+
+While the Bernoulli Naïve Bayes model had great performance compared to the Gaussian model, there are some limitations that can be considered. For example, the analysis is limited by the feature engineering choices of the dataset, which includes word and character frequencies, as well as some capitalization metrics. These features do not consider word order and context, which can be supported by other Machine Learning techniques such as TF-IDF vectorization and n-grams. Additionally, Bayesian models can be influenced by irrelevant attributes, which can lead to poor generalization and overfitting when introduced to new, unseen data (Geeks for Geeks, 2025). To improve this, less important features can be removed from the dataset when training the model. Backward Elimination is a great example of this, where the least significant features are removed one at a time based on their contribution to the model’s performance (Cherifa, Asma, 2025). 
 
 
+-------------------------------------------------------------------------------------------------------------
+
+# References
+
+
+Hopkins, M., Reeber, E., Forman, G., & Suermondt, J. (1999). ‘Spambase [Dataset]. UCI Machine Learning Repository.’ https://doi.org/10.24432/C53G6X.
+
+Geeks For Geeks. (2025). ‘Naïve Bayes Classifiers.’ https://www.geeksforgeeks.org/machine-learning/naive-bayes-classifiers/
+
+Cherifa, Asma. (2025). Medium. ‘Feature selection methods: Backward elimination, forward selection, and LASSO.’ https://medium.com/@asmacherifa/feature-selection-methods-backward-elimination-forward-selection-and-lasso-1b62191a9869
+
+-------------------------------------------------------------------------------------------------------------
 
 
