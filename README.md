@@ -82,6 +82,24 @@ As shown in the table results above, the Gaussian and Bernoulli methods had vary
 
 # Evaluation
 
+Taking the output interpretation a step further, an ROC/AUC curve was created to assess the performance of both the Gaussian and Bernoulli Naïve Bayes models. This can be viewed in the data visualization below: 
+
+
+<img width="659" height="492" alt="image" src="https://github.com/user-attachments/assets/32653f30-f9bd-4057-84fb-88160361333a" />
+
+When looking at the ROC curves, both Bayesian models are near 1.0, indicating their high-quality classification between spam and non-spam values. Additionally, the ROC curves show that both models can achieve significantly better results with complex data compared to other classification models, such as logistic and linear regression. When choosing between the Gaussian and Bernoulli models, evaluating all performance metrics is key to ensuring their functionality in detecting binary classifiers. 
+
+-------------------------------------------------------------------------------------------------------------
+
+# Conclusion
+
+-------------------------------------------------------------------------------------------------------------
+
+# Summary
+
+This analysis has demonstrated that Bayesian classification is an effective Machine Learning approach towards detection, using the UCI Spambase dataset. The output results show that both Gaussian Naïve Bayes and Bernoulli Naïve Bayes held high accuracy scores above 82.0% and strong ROC/AUC curves above 95.0%. This meets the stated objective and confirms that the Bayesian Classification approach is a reliable, effective method for spam detection. 
+
+-------------------------------------------------------------------------------------------------------------
 
 
 
