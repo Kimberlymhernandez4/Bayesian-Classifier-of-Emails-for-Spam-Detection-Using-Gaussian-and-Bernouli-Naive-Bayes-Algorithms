@@ -2,6 +2,10 @@
 An ML Bayesian Classifier using the Gaussian and Bernoulli Naive Bayes algorithms. Results will be compared based on their ML performance metrics and accuracy. 
 -------------------------------------------------------------------------------------------------------------
 
+Access the dataset from UCI'S Machine Learning Repository: https://archive.ics.uci.edu/dataset/94/spambase
+
+-------------------------------------------------------------------------------------------------------------
+
 
 # Overview
 
