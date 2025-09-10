@@ -50,16 +50,37 @@ Displays the class distribution of ‘capital_run_length_average’, representin
 
 # Preprocessing
 
+For the exploratory analysis, I created a table of key values, which included the rows, columns, spam rate, non-spam count, and spam count of the dataset (displayed below):
+
+<img width="645" height="129" alt="image" src="https://github.com/user-attachments/assets/d92f12f1-4444-42fc-8e45-5a5c18d80226" />
+ 
+The dataset was split into two variables: the target label named ‘class’ (y) and all other columns noted as features (X). Furthermore, the two variables were placed into training and testing sets using the ‘train_test_split’ function (80% train, 20% test) and ‘random_state’ equal to a fixed integer (42). For the Gaussian Naïve Bayes model, features were used in the order provided since the algorithm assumes continuous values and models them as Gaussian distributions. For the Bernoulli Naïve Bayes model, the features were binarized using a threshold to convert frequencies into binary indicators of present (1) or absent (0). Moreover, these preprocessing steps allow the two models to identify whether specific patterns occur at all, regardless of their frequency. 
+
+-------------------------------------------------------------------------------------------------------------
+
+# Model Fitting
+
+Two models (Gaussian Naïve Bayes and Bernoulli Naïve Bayes) were fit using five-fold stratified cross-validation with grid search to identify the best hyperparameters to use. For Gaussian Naïve Bayes, the parameter ‘var_smoothing’, which controls variance regularization, was tuned over values within the Spambase dataset. For Bernoulli Naïve Bayes, a pipeline was created that included a Binarizer, followed by the classifier using GridSearchCV(). Gradients for both algorithms were fit onto the models to create an ROC/AUC curve. The Grid Search tuned the binarization threshold (0.0 to 0.2) and the alpha parameter (0.1 to 5.0) to evaluate the train/test data. 
+
+-------------------------------------------------------------------------------------------------------------
 
 
+# Model Properties
+The Gaussian Naïve Bayes model estimates the variance and mean of each feature for both the spam and non-spam classifiers by applying a smoothing parameter to stabilize small variances. The Bernoulli Naïve Bayes model represents features as binary values (0 and 1) after binarization and alpha tuning with Grid Search for model fitting.  The threshold choice for binarization directly influences how sensitive the models are to small feature frequencies, while the alpha parameter balances the bias-variance tradeoff in probability estimates. 
 
 
+-------------------------------------------------------------------------------------------------------------
+
+# Output Interpretation
+
+<img width="568" height="139" alt="image" src="https://github.com/user-attachments/assets/7db51185-b6db-48ca-9e94-8350cadfd0fe" />
+
+As shown in the table results above, the Gaussian and Bernoulli methods had varying results. The Gaussian Naïve Bayes achieved an 82.5% accuracy, 70.4% precision score, a recall of 96.1%, an f-1 score of 81.3%, and an ROC/AUC curve of 95.2%. The Bernoulli model had a higher accuracy score (90.2%) and precision (89.3%), but held a significantly lower recall (85.4%). In addition, the Bernoulli model’s f1-score had a greater outcome of 87.3% compared to the Gaussian model, and a slightly improved ROC/AUC curve of 96.0%. Based on the stated objective, we can conclude that the Bernoulli model provided greater quality in results compared to the Gaussian model, which solidifies its reliability in production usage. Overall, the results above can confirm that Bayesian classification is an effective ML approach towards predictive modeling for email spam detection. 
 
 
+-------------------------------------------------------------------------------------------------------------
 
-
-
-
+# Evaluation
 
 
 
